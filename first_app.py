@@ -66,48 +66,48 @@ class FirstApp(Tk):
         ###################
 
 
-        chekout_frame = Frame(self, padx=20, pady=20, height=200)
-        chekout_frame.pack(side="bottom", fill="x", padx=16, pady=16)
-        chekout_frame.grid_propagate(0)
-        chekout_frame.pack_propagate(0)  # 'Cause the last widjet is packing
+        self.chekout_frame = Frame(self, padx=20, pady=20, height=200)
+        self.chekout_frame.pack(side="bottom", fill="x", padx=16, pady=16)
+        self.chekout_frame.grid_propagate(0)
+        self.chekout_frame.pack_propagate(0)  # 'Cause the last widjet is packing
 
-        chk_in = Entry(chekout_frame, width=35)
-        chk_in.grid(column=0, row=0, columnspan=3)
+        self.chk_in = Entry(self.chekout_frame, width=35)
+        self.chk_in.grid(column=0, row=0, columnspan=3)
 
-        r1_label = Label(chekout_frame, text="Vous aimez :")
-        r1_label.grid(column=0, row=1, columnspan=3)
-        r1_btn_vals = IntVar()
-        r1_btn_vals_table = ["Rien de Ouf", "Ta Mère", "Ton Père", "Ton Frère"]
-        r1_btn_1 = Radiobutton(chekout_frame, text=r1_btn_vals_table[1], variable=r1_btn_vals, value=1)
-        r1_btn_1.grid(column=0, row=2)
-        r1_btn_2 = Radiobutton(chekout_frame, text=r1_btn_vals_table[2], variable=r1_btn_vals, value=2)
-        r1_btn_2.grid(column=1, row=2)
-        r1_btn_3 = Radiobutton(chekout_frame, text=r1_btn_vals_table[3], variable=r1_btn_vals, value=3)
-        r1_btn_3.grid(column=2, row=2)
+        self.r1_label = Label(self.chekout_frame, text="Vous aimez :")
+        self.r1_label.grid(column=0, row=1, columnspan=3)
+        self.r1_btn_vals = IntVar()
+        self.r1_btn_vals_table = ["Rien de Ouf", "Ta Mère", "Ton Père", "Ton Frère"]
+        self.r1_btn_1 = Radiobutton(self.chekout_frame, text=self.r1_btn_vals_table[1], variable=self.r1_btn_vals, value=1)
+        self.r1_btn_1.grid(column=0, row=2)
+        self.r1_btn_2 = Radiobutton(self.chekout_frame, text=self.r1_btn_vals_table[2], variable=self.r1_btn_vals, value=2)
+        self.r1_btn_2.grid(column=1, row=2)
+        self.r1_btn_3 = Radiobutton(self.chekout_frame, text=self.r1_btn_vals_table[3], variable=self.r1_btn_vals, value=3)
+        self.r1_btn_3.grid(column=2, row=2)
 
-        r2_label = Label(chekout_frame, text="Vous n'aimez pas :")
-        r2_label.grid(column=0, row=3, columnspan=3)
-        r2_btn_vals = IntVar()
-        r2_btn_vals_table = ["Prsn Miskinnn", "Ton Oncle", "Ta Tante", "Ta Grand-Mère"]
-        r2_btn_1 = Radiobutton(chekout_frame, text=r2_btn_vals_table[1], indicatoron=0, variable=r2_btn_vals, value=1)
-        r2_btn_1.grid(column=0, row=4)
-        r2_btn_2 = Radiobutton(chekout_frame, text=r2_btn_vals_table[1], indicatoron=0, variable=r2_btn_vals, value=2)
-        r2_btn_2.grid(column=1, row=4)
-        r2_btn_3 = Radiobutton(chekout_frame, text=r2_btn_vals_table[1], indicatoron=0, variable=r2_btn_vals, value=3)
-        r2_btn_3.grid(column=2, row=4)
+        self.r2_label = Label(self.chekout_frame, text="Vous n'aimez pas :")
+        self.r2_label.grid(column=0, row=3, columnspan=3)
+        self.r2_btn_vals = IntVar()
+        self.r2_btn_vals_table = ["Prsn Miskinnn", "Ton Oncle", "Ta Tante", "Ta Grand-Mère"]
+        self.r2_btn_1 = Radiobutton(self.chekout_frame, text=self.r2_btn_vals_table[1], indicatoron=0, variable=self.r2_btn_vals, value=1)
+        self.r2_btn_1.grid(column=0, row=4)
+        self.r2_btn_2 = Radiobutton(self.chekout_frame, text=self.r2_btn_vals_table[1], indicatoron=0, variable=self.r2_btn_vals, value=2)
+        self.r2_btn_2.grid(column=1, row=4)
+        self.r2_btn_3 = Radiobutton(self.chekout_frame, text=self.r2_btn_vals_table[1], indicatoron=0, variable=self.r2_btn_vals, value=3)
+        self.r2_btn_3.grid(column=2, row=4)
 
-        imgg = PhotoImage(file="src/Python.png").subsample(int(2048/128), int(2048/128))
-        chk_img = Label(chekout_frame, image=imgg, height=128, width=128, padx=120)
-        chk_img.grid(column=3, row=0, rowspan=5, padx=18, sticky="news")  # Not "news" like newsletters x) ... More like "North East West Sud" And here, it's not verry necessary.
+        self.imgg = PhotoImage(file="src/Python.png").subsample(int(2048/128), int(2048/128))
+        self.chk_img = Label(self.chekout_frame, image=self.imgg, height=128, width=128, padx=120)
+        self.chk_img.grid(column=3, row=0, rowspan=5, padx=18, sticky="news")  # Not "news" like newsletters x) ... More like "North East West Sud" And here, it's not verry necessary.
 
-        chk_reset_btn = Button(chekout_frame, width=16, height=2, text="Reset.", command=self.chk_reset)
-        chk_reset_btn.grid(column=4, row=0, rowspan=2)
+        self.chk_reset_btn = Button(self.chekout_frame, width=16, height=2, text="Reset.", command=self.chk_reset)
+        self.chk_reset_btn.grid(column=4, row=0, rowspan=2)
 
-        chk_done_btn = Button(chekout_frame, width=16, height=2, text="Done !", command=self.chk)
-        chk_done_btn.grid(column=4, row=3, rowspan=5)
+        self.chk_done_btn = Button(self.chekout_frame, width=16, height=2, text="Done !", command=self.chk)
+        self.chk_done_btn.grid(column=4, row=3, rowspan=5)
 
-        chk_label = Label(chekout_frame, width=12, bg="SteelBlue1", fg="magenta2")
-        chk_label.pack(side="right", fill="y")
+        self.chk_label = Label(self.chekout_frame, width=12, bg="SteelBlue1", fg="magenta2")
+        self.chk_label.pack(side="right", fill="y")
     
     def start(self):
         self.mainloop()
